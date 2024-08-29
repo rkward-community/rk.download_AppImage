@@ -205,29 +205,29 @@ aiu_js_calc <- rk.paste.JS(
     linebreaks = FALSE
   ),
   echo(
-    "appimage <- rk.download_appimage(\n",
-    "  dir = \"", file_dirname, "\"",          # dir = dirname(Sys.getenv("APPIMAGE"))
-    ",\n  filename = \"", file_basename, "\""  # filename = "rkward-master-linux-gcc-x86_64.AppImage"
+    "appimage <- rk.with.progress(\n  {rk.download_appimage(\n",
+    "    dir = \"", file_dirname, "\"",          # dir = dirname(Sys.getenv("APPIMAGE"))
+    ",\n    filename = \"", file_basename, "\""  # filename = "rkward-master-linux-gcc-x86_64.AppImage"
   ),
   js(
     if(overwriteChecked){
-      echo(",\n  overwrite = TRUE")
+      echo(",\n    overwrite = TRUE")
     } else {
-      echo(",\n  overwrite = FALSE")
+      echo(",\n    overwrite = FALSE")
     }
   ),
   echo(
-    ",\n  url = \"", aiu_url, "\"",                # url = "https://cdn.kde.org/ci-builds/education/rkward/master/linux"
-    ",\n  pattern = \"", aiu_pattern, "\"",        # pattern = "rkward-master.*linux-gcc-x86_64\\.AppImage"
-    ",\n  method = \"", aiu_method, "\""           # method = "auto"
+    ",\n    url = \"", aiu_url, "\"",                # url = "https://cdn.kde.org/ci-builds/education/rkward/master/linux"
+    ",\n    pattern = \"", aiu_pattern, "\"",        # pattern = "rkward-master.*linux-gcc-x86_64\\.AppImage"
+    ",\n    method = \"", aiu_method, "\""           # method = "auto"
   ),
   tf(
     aiu_cacheok,                                   #   , cacheOK = FALSE
     opt = "cacheOK",
-    level = 2
+    level = 4
   ),
-  echo(",\n  timeout = ", aiu_timeout,             # timeout =  max(400, getOption("timeout"))
-    "\n)\n\n"
+  echo(",\n    timeout = ", aiu_timeout,             # timeout =  max(400, getOption("timeout"))
+    "\n  )},\n  text = \"Downloading RKWard AppImage...\"\n)\n\n"
   )
 )
 
