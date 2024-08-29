@@ -23,7 +23,7 @@
     shortinfo="Adds a dialog to install or update an AppImage of RKWard"
     longinfo="Adds a dialog to install or update an AppImage of RKWard"
     version="0.01-0"
-    releasedate="2024-07-26"
+    releasedate="2024-08-29"
     url="https://rkward.kde.org"
     license="GPL (&gt;= 3)"
   >

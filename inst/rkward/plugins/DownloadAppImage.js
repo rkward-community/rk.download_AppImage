@@ -28,17 +28,17 @@ function calculate(is_preview){
   var aiuFileOverwrite = getValue("aiu_file.overwrite");
   var fileBasename = aiuFile.replace(/.*\//, '');
   var fileDirname = aiuFile.match(/.*\//);
-  echo("appimage <- rk.download_appimage(\n" + "  dir = \"" + fileDirname + "\"" + ",\n  filename = \"" + fileBasename + "\"");
+  echo("appimage <- rk.with.progress(\n  {rk.download_appimage(\n" + "    dir = \"" + fileDirname + "\"" + ",\n    filename = \"" + fileBasename + "\"");
   if(aiuFileOverwrite) {
-    echo(",\n  overwrite = TRUE");  
+    echo(",\n    overwrite = TRUE");  
   } else {
-    echo(",\n  overwrite = FALSE");  
+    echo(",\n    overwrite = FALSE");  
   }
-  echo(",\n  url = \"" + aiuUrl + "\"" + ",\n  pattern = \"" + aiuPattern + "\"" + ",\n  method = \"" + aiuMethod + "\"");
+  echo(",\n    url = \"" + aiuUrl + "\"" + ",\n    pattern = \"" + aiuPattern + "\"" + ",\n    method = \"" + aiuMethod + "\"");
   if(aiuCacheok) {
-    echo(",\n  cacheOK=TRUE");
+    echo(",\n      cacheOK=TRUE");
   } else {}
-  echo(",\n  timeout = " + aiuTimeout + "\n)\n\n");
+  echo(",\n    timeout = " + aiuTimeout + "\n  )},\n  text = \"Downloading RKWard AppImage...\"\n)\n\n");
 }
 
 function printout(is_preview){

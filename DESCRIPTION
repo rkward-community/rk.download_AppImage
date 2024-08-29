@@ -2,7 +2,7 @@ Package: rk.downloadAppImage
 Type: Package
 Title: Adds a dialog to install or update an AppImage of RKWard
 Version: 0.01-0
-Date: 2024-07-26
+Date: 2024-08-29
 Author: Meik Michalke
 Maintainer: Meik Michalke <meik.michalke@hhu.de>
 Enhances: rkward
@@ -12,4 +12,3 @@ Encoding: UTF-8
 LazyLoad: yes
 URL: https://rkward.kde.org
 Authors@R: person(given="Meik", family="Michalke", email="meik.michalke@hhu.de", role=c("aut", "cre"))
-RoxygenNote: 7.3.1
